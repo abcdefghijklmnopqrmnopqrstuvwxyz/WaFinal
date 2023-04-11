@@ -1,0 +1,15 @@
+.navdes {
+    width: inherit;
+    height: 5px;
+    background-color: rgb(66, 66, 66);
+}
+
+.navdesactive {
+    width: inherit;
+    height: 5px;
+    background-color: rgb(48, 123, 221);
+}
+
+.head {
+    font-family: 'Noto Sans Display', sans-serif;
+}
