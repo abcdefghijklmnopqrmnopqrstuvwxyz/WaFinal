@@ -1,15 +1,88 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.text-container {
+    font-size: 150px;
+    margin: 10vw;
+    color: rgba(225,225,225, .01);
+    background-image: url("../img/back.jpg");
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0%, 100% {
+        background-position: left top;
+    }
+    25%{
+        background-position: right bottom;
+    }
+    50% {
+        background-position: left bottom;
+    }
+    75% {
+        background-position: right top;
+    }
+}
+
+.mouse::before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, rgb(166, 204, 221), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+    z-index: -10;
+}
+  
+.mouse::before {
+    --size: 200px;
+}
+
+.navitem {
+    width: 10vw;
+}
+
 .navdes {
     width: inherit;
-    height: 5px;
+    height: 15px;
     background-color: rgb(66, 66, 66);
+}
+
+.hover:hover {
+    .navdes {
+        background-color: rgb(220, 229, 242);
+    }
+}
+
+.hoveractive:hover {
+    .navdesactive {
+        background-color: rgb(39, 71, 232);
+    }
 }
 
 .navdesactive {
     width: inherit;
-    height: 5px;
+    height: 15px;
     background-color: rgb(48, 123, 221);
+}
+
+.navmenu {
+    width: auto;
+    height: 10vh;
 }
 
 .head {
     font-family: 'Noto Sans Display', sans-serif;
+}
+
+.backgr {
+    background-color: black;
 }
