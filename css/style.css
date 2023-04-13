@@ -1,10 +1,6 @@
-body {
-    background-color: rgb(0, 0, 0);
-}
-
 .text-container {
     font-size: 150px;
-    margin: 10vw;
+    margin: 7vw;
     color: rgba(225,225,225, .01);
     background-image: url("../img/back.jpg");
     background-repeat: repeat;
@@ -29,21 +25,17 @@ body {
 }
 
 .mouse::before {
-    --size: 0;
+    --size: 200px;
     content: '';
-    position: absolute;
+    position: fixed;
     left: var(--x);
     top: var(--y);
     width: var(--size);
     height: var(--size);
     background: radial-gradient(circle closest-side, rgb(166, 204, 221), transparent);
     transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
+    transition: 0 0.2s ease, 0 0.2s ease;
     z-index: -10;
-}
-  
-.mouse::before {
-    --size: 200px;
 }
 
 .navitem {
@@ -85,4 +77,31 @@ body {
 
 .backgr {
     background-color: black;
+    z-index: -20;
+}
+
+.textjustify {
+    text-align: justify;
+}
+
+.imgresize {
+    width: 50%;
+    height: 50%;
+    transform: translate(50%, 0%);
+}
+
+.freebutton {
+    background: transparent;
+    box-shadow: 0 2px 4px 0 white;
+    transition: 0.3s;
+}
+
+.freebutton:hover {
+    transition: 0.3s;
+    transform: scale(1.05, 1.05);
+}
+
+.footerline {
+    height: 3px;
+    background-color: gray;
 }

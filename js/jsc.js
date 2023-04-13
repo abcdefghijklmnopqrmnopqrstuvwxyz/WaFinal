@@ -1,8 +1,12 @@
 let btn = document.querySelector('.mouse');
+let mousePosition = {x: 0, y: 0};
 
-btn.addEventListener('mousemove', e => {
-    let x = e.clientX;
-    let y = e.clientY;
-    btn.style.setProperty('--x', x + 'px');
-    btn.style.setProperty('--y', y + 'px');
-});
+function updateMouseLocation(e)
+{
+    mousePosition.x = e.clientX;
+    mousePosition.y = e.clientY;
+    btn.style.setProperty('--x', mousePosition.x + 'px');
+    btn.style.setProperty('--y', mousePosition.y + 'px');
+}
+
+btn.addEventListener('mousemove', updateMouseLocation);
