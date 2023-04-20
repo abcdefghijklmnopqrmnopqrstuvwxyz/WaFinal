@@ -66,11 +66,6 @@
     background-color: rgb(48, 123, 221);
 }
 
-.navmenu {
-    width: auto;
-    height: 10vh;
-}
-
 .head {
     font-family: 'Noto Sans Display', sans-serif;
 }
@@ -101,7 +96,7 @@
     transform: scale(1.05, 1.05);
 }
 
-.footerline {
+.line {
     height: 3px;
     background-color: gray;
 }
