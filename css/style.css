@@ -28,6 +28,10 @@ header {
     font-family: 'Open Sans', sans-serif;
 }
 
+.carousal-img {
+    width: 65vw;
+}
+
 @media only screen and (max-width: 800px) {
     .text-container {
         font-size: 120px;

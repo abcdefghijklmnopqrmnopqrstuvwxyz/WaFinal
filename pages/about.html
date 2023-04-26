@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </head>
     <body class="backgr-2">
@@ -73,14 +74,140 @@
                     <h1 class="p-5 text-container-2">About our virtual gallery</h1>
                     <p class="fs-4 mx-5 text-container-4">Welcome to our virtual gallery! We are a team of passionate artists and curators who are excited to share our artistic visions and creations with you. Our gallery serves as an open space for artists from around the world to showcase their artworks and connect with audiences.</p>
                 </div>
-                <div class="container text-cont mb-5">
+                <div id="carousel" class="container carousel slide justify-content-center py-4 px-5" data-bs-ride="carousel">
+                    <div class="carousel-indicators pb-4">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" class=""></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" class=""></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" class=""></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" class=""></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="5" class=""></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="6" class=""></button>
+                    </div>
+                    <div class="carousel-inner" width="500px">
+                        <div class="carousel-item active">
+                            <img src="../img/carousal1.jpg" alt="carousal1" class="carousal-img">
+                            <div class="container">
+                                <div class="carousel-caption text-start">
+                                    <div class="d-lg-block d-none">
+                                        <h1>Toyota Celica T Sport</h1>
+                                        <p>Toyota Celica is a sports compact coupe built by Toyota from 1971 to 2006.</p>
+                                    </div>
+                                    <p class="text-lg-start text-center"><a class="btn btn-lg btn-success d-lg-inline-block d-none" data-bs-target="#modal1" data-bs-toggle="modal">Check statistics</a></p>
+                                    <p class="text-lg-start text-center"><a class="btn btn-sm btn-success d-lg-none d-lg-inline-block" data-bs-target="#modal1" data-bs-toggle="modal">Check statistics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/carousal2.jpg" alt="carousal2" class="carousal-img">
+                            <div class="container">
+                                <div class="carousel-caption text-end">
+                                    <div class="d-lg-block d-none">
+                                        <h1>Toyota FT-1</h1>
+                                        <p>The Toyota FT-1 is a 'pure performance dream' concept model created by CALTY Design.</p>
+                                    </div>
+                                    <p class="text-lg-end text-center"><a class="btn btn-lg btn-success d-lg-inline-block d-none" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                    <p class="text-lg-end text-center"><a class="btn btn-sm btn-success d-lg-none d-inline-block" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/carousal3.jpg" alt="carousal3" class="carousal-img">
+                            <div class="container">
+                                <div class="carousel-caption text-end">
+                                    <div class="d-lg-block d-none">
+                                        <h1>Toyota FT-1</h1>
+                                        <p>The Toyota FT-1 is a 'pure performance dream' concept model created by CALTY Design.</p>
+                                    </div>
+                                    <p class="text-lg-end text-center"><a class="btn btn-lg btn-success d-lg-inline-block d-none" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                    <p class="text-lg-end text-center"><a class="btn btn-sm btn-success d-lg-none d-inline-block" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/carousal4.jpg" alt="carousal4" class="carousal-img">
+                            <div class="container">
+                                <div class="carousel-caption text-end">
+                                    <div class="d-lg-block d-none">
+                                        <h1>Toyota FT-1</h1>
+                                        <p>The Toyota FT-1 is a 'pure performance dream' concept model created by CALTY Design.</p>
+                                    </div>
+                                    <p class="text-lg-end text-center"><a class="btn btn-lg btn-success d-lg-inline-block d-none" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                    <p class="text-lg-end text-center"><a class="btn btn-sm btn-success d-lg-none d-inline-block" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/carousal5.jpg" alt="carousal5" class="carousal-img">
+                            <div class="container">
+                                <div class="carousel-caption text-end">
+                                    <div class="d-lg-block d-none">
+                                        <h1>Toyota FT-1</h1>
+                                        <p>The Toyota FT-1 is a 'pure performance dream' concept model created by CALTY Design.</p>
+                                    </div>
+                                    <p class="text-lg-end text-center"><a class="btn btn-lg btn-success d-lg-inline-block d-none" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                    <p class="text-lg-end text-center"><a class="btn btn-sm btn-success d-lg-none d-inline-block" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/carousal6.jpg" alt="carousal6" class="carousal-img">
+                            <div class="container">
+                                <div class="carousel-caption text-end">
+                                    <div class="d-lg-block d-none">
+                                        <h1>Toyota FT-1</h1>
+                                        <p>The Toyota FT-1 is a 'pure performance dream' concept model created by CALTY Design.</p>
+                                    </div>
+                                    <p class="text-lg-end text-center"><a class="btn btn-lg btn-success d-lg-inline-block d-none" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                    <p class="text-lg-end text-center"><a class="btn btn-sm btn-success d-lg-none d-inline-block" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/carousal7.jpg" alt="carousal7" class="carousal-img">
+                            <div class="container">
+                                <div class="carousel-caption text-end">
+                                    <div class="d-lg-block d-none">
+                                        <h1>Toyota FT-1</h1>
+                                        <p>The Toyota FT-1 is a 'pure performance dream' concept model created by CALTY Design.</p>
+                                    </div>
+                                    <p class="text-lg-end text-center"><a class="btn btn-lg btn-success d-lg-inline-block d-none" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                    <p class="text-lg-end text-center"><a class="btn btn-sm btn-success d-lg-none d-inline-block" data-bs-target="#modal2" data-bs-toggle="modal">Check statistics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev my-4" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next my-4" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <!--div class="card" aria-hidden="true">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                            <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                        </p>
+                        <a class="btn btn-primary disabled placeholder col-6"></a>
+                    </div>
+                </div-->
+                <div class="container mb-5">
                     <div class="row d-md-flex d-block">
                         <div class="col">
                             <img class="img-fluid" src="../img/pic-1.jpg" alt="pic1">
                         </div>
                     </div>
                 </div>
-                <div class="container text-container-3">
+                <div class="container text-container-3 ">
                     <div class="row d-md-flex d-block">
                         <div class="accordion accordion-flush col-md-6 p-4">
                             <h1 class="text-center py-3 display-6 fst-italic">
@@ -88,7 +215,7 @@
                             </h1>
                             <div class="accordion-item py-1 rounded-top border">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#First">Our Vision and Mission</button>
+                                    <button class="accordion-button collapsed z-1" data-bs-toggle="collapse" data-bs-target="#First">Our Vision and Mission</button>
                                 </h2>
                                 <div class="accordion-collapse collapse" id="First">
                                     <div class="accordion-body">
@@ -98,7 +225,7 @@
                             </div>
                             <div class="accordion-item py-1 border">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#Fifth">Art Education and Appreciation</button>
+                                    <button class="accordion-button collapsed z-1" data-bs-toggle="collapse" data-bs-target="#Fifth">Art Education and Appreciation</button>
                                 </h2>
                                 <div class="accordion-collapse collapse" id="Fifth">
                                     <div class="accordion-body">
@@ -108,7 +235,7 @@
                             </div>
                             <div class="accordion-item py-1 border">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#Second">Team and Expertise</button>
+                                    <button class="accordion-button collapsed z-1" data-bs-toggle="collapse" data-bs-target="#Second">Team and Expertise</button>
                                 </h2>
                                 <div class="accordion-collapse collapse" id="Second">
                                     <div class="accordion-body">
@@ -118,7 +245,7 @@
                             </div>
                             <div class="accordion-item py-1 border">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#Third">Commitment to Artists</button>
+                                    <button class="accordion-button collapsed z-1" data-bs-toggle="collapse" data-bs-target="#Third">Commitment to Artists</button>
                                 </h2>
                                 <div class="accordion-collapse collapse" id="Third">
                                     <div class="accordion-body">
@@ -126,7 +253,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item py-1 rounded-bottom border">
+                            <div class="accordion-item py-1 rounded-bottom border z-1">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#Fourth">Interactive Art Experience</button>
                                 </h2>
