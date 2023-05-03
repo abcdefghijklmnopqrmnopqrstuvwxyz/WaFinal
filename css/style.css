@@ -180,13 +180,13 @@ header {
     transform: translate(50%, 0%);
 }
 
-.freebutton {
+.buttonan {
     background: transparent;
     box-shadow: 0 2px 4px 0 white;
     transition: 0.3s;
 }
 
-.freebutton:hover {
+.buttonan:hover {
     transition: 0.3s;
     transform: scale(1.05, 1.05);
 }
