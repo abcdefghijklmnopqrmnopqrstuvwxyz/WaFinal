@@ -27,7 +27,7 @@
                 </a>
             </div>
             <nav class="bg-dark d-xl-flex nav navbar-collapse collapse" id="navbar">
-                <div class="d-xl-flex d-block pb-2 container respc">
+                <div class="d-xl-flex d-block pb-2 container">
                     <hr class="line">
                     <a href="../index.html" class="d-block text-decoration-none p-xl-0 p-1 hover">
                         <div class="d-flex text-center py-3 px-4 text-light justify-content-center align-items-center">
@@ -69,14 +69,45 @@
         </header>
 
         <main class="text-center">
-            <div class="container border border-danger">
-                <h1 class="text-container-7">Statistics</h1>
-                <ul class="list-unstyled fw-bold text-container-4">
-                    <li class="d-flex pb-2"><span class="material-symbols-outlined">visibility</span>&nbsp;Viewed pictures: </li>
-                    <li class="d-flex pb-2"><span class="material-symbols-outlined">thumb_up</span>&nbsp;Liked: </li>
-                    <li class="d-flex pb-2"><span class="material-symbols-outlined">thumb_down</span>&nbsp;Disliked: </li>
-                    <li class="d-flex pb-2"><span class="material-symbols-outlined">history</span>&nbsp;All time total: </li>
-                </ul>
+            <div class="d-flex justify-content-center">
+                <div class="mt-5 d-block border border-3 shadow-lg border-dark-subtle pt-3 overflow-hidden">
+                    <div class="row d-flex">
+                        <div class="d-block col-md-4 col-12">
+                            <img src="../img/user.jpg" alt="user" class="img-fluid ms-md-4 ms-0">
+                            <p class="ms-md-5 ms-0 text-center fs-3 overflow-auto border-bottom border-3 fw-medium" d="name">Some User</p>
+                        </div>
+                        <div class="d-block col-md-8 col-12">
+                            <h1 class="text-container-7">User Info</h1>
+                            <hr class="line mx-5">
+                            <div class="row justify-content-center text-container-4">
+                                <ul class="list-unstyled fw-bold col-5">
+                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">visibility</span>&nbsp;Viewed arts:</li>
+                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">thumb_up</span>&nbsp;Liked:</li>
+                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">thumb_down</span>&nbsp;Disliked:</li>
+                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">history</span>&nbsp;Logged times:</li>
+                                </ul>
+                                <ul class="list-unstyled fw-bold col-1">
+                                    <li class="pb-2" id="view">0</li>
+                                    <li class="pb-2" id="like">0</li>
+                                    <li class="pb-2" id="dislike">0</li>
+                                    <li class="pb-2" id="log">0</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container my-5">
+                <div class="border border-2 justify-content-center">
+                    <div class="border-bottom mb-3 d-flex align-items-center justify-content-center" id="frame">
+                        <img src="" class="img-fluid" id="img">
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button type="submit" class="btn btn-success text-container-4 fs-2 mb-3" id="artbtnlike">Like</button>
+                        <button type="submit" class="btn btn-primary text-container-4 fs-2 mb-3" id="artbtngenerate">Generate Art</button>
+                        <button type="submit" class="btn btn-danger text-container-4 fs-2 mb-3" id="artbtndislike">Dislike</button>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -112,9 +143,10 @@
                 </div>
             </div>
         </footer>
+
+        <script type="text/javascript" src="../js/arts.js"></script>
     </body>
 </html>
 
 <!--https://fonts.google.com/icons?selected=Material+Symbols+Outlined:help:FILL@0;wght@400;GRAD@0;opsz@48&icon.query=info
 #https://fonts.google.com/noto/specimen/Noto+Sans+Display?preview.size=33&noto.continent=Europe-->
-<!--https://rapidapi.com/app-vision-bv-app-vision-bv-default/api/random-images1/-->
