@@ -3,6 +3,17 @@ header {
     top: 0;
 }
 
+.imgframe {
+    width: 100%;
+    height: 38vw;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .text-container {
     font-size: 150px;
     margin: 7vw;
