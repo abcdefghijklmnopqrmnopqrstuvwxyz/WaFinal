@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Virtual Gallery</title>
+        <title>Virtual Gallery - Login</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
@@ -70,14 +70,14 @@
 
         <main class="text-center">
             <div class="my-5 container justify-content-center d-flex">
-                <form class="text-container-6 mx-5 w-75 mt-5">
+                <form class="text-container-6 mx-5 w-75 mt-5" action="../php/login.php" method="POST">
                     <div class="mb-5">
                         <label for="email" class="form-label fs-1">Email address</label>
-                        <input type="email" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" id="email">
+                        <input type="email" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" name="email" required>
                     </div>
                     <div class="mb-5">
                         <label for="pass" class="form-label fs-1">Password</label>
-                        <input type="password" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" id="pass">
+                        <input type="password" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" name="pass" required>
                     </div>
                     <div class="row justify-content-lg-between justify-content-center align-items-center my-5">
                         <a href="./register.html" class="fs-3 text-decoration-none text-container-4 col-lg-6 col-12">Not registered account yet? Do it here.</a>
