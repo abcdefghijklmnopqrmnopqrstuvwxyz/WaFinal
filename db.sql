@@ -4,12 +4,12 @@ use wa;
 create table user(
 	id int not null unique auto_increment,
 	name varchar(20) not null unique,
-    password varchar(20) not null check(length(password) > 5),
-    email varchar(50) not null unique check(email like '%@%'),
-    views int default 0,
-    likes int default 0,
-    dislikes int default 0,
-    logs int default 0
+ 	password varchar(20) not null check(length(password) > 5),
+    	email varchar(50) not null unique check(email like '%@%'),
+    	views int default 0,
+    	likes int default 0,
+    	dislikes int default 0,
+    	logs int default 0
 );
 
 
