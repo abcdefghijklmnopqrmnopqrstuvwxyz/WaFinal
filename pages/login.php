@@ -43,21 +43,21 @@
                         </div>
                         <div class="navdes"></div>
                     </a>
-                    <a href="./gallery.html" class="d-block text-decoration-none p-xl-0 p-1 hover">
+                    <a href="./gallery.php" class="d-block text-decoration-none p-xl-0 p-1 hover">
                         <div class="d-flex text-center py-3 px-4 text-light justify-content-center align-items-center">
                             <span class="material-symbols-outlined d-block fs-2 p-1">Photo_library</span>
                             <span class="px-2 fs-3">Virtual gallery</span>
                         </div>
                         <div class="navdes"></div>
                     </a>
-                    <a href="./login.html" class="d-block text-decoration-none ms-xl-auto p-xl-0 p-1 hoveractive">
+                    <a href="./login.php" class="d-block text-decoration-none ms-xl-auto p-xl-0 p-1 hoveractive">
                         <div class="d-flex text-center py-3 px-4 text-primary justify-content-center align-items-center">
                             <span class="material-symbols-outlined d-block fs-2 p-1">Login</span>
                             <span class="px-2 fs-3">Log in</span>
                         </div>
                         <div class="navdesactive"></div>
                     </a>
-                    <a href="./register.html" class="d-block text-decoration-none p-xl-0 p-1 hover">
+                    <a href="./register.php" class="d-block text-decoration-none p-xl-0 p-1 hover">
                         <div class="d-flex text-center py-3 px-4 text-light justify-content-center align-items-center">
                             <span class="material-symbols-outlined d-block fs-2 p-1">How_to_reg</span>
                             <span class="px-2 fs-3">Sign in</span>
@@ -83,6 +83,13 @@
                         <a href="./register.html" class="fs-3 text-decoration-none text-container-4 col-lg-6 col-12">Not registered account yet? Do it here.</a>
                         <button type="submit" class="btn btn-primary fs-3 col-lg-2 mt-lg-2 mt-4 col-sm-3 col-4">Log in</button>
                     </div>
+                    <?php
+                        if (isset($_SESSION["error"])) {
+                            $errorMessage = $_SESSION["error"];
+                            unset($_SESSION["error"]);
+                            echo '<p class="error-messag"> $errorMessage "</p>"';
+                        }
+                    ?>
                 </form>
             </div>
         </main>

@@ -14,6 +14,7 @@ function getImgData()
         method: "GET",
         success: function(response){
             var imageUrl = response.urls.regular;
+            localStorage.setItem("img", imageUrl);
             $(img).attr("src", imageUrl);
         },
         error: function(){
@@ -23,4 +24,6 @@ function getImgData()
     });
 }
 
+artlike.addEventListener('click', getImgData);
+artdislike.addEventListener('click', getImgData);
 artgen.addEventListener('click', getImgData);

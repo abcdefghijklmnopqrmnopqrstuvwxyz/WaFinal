@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Virtual Gallery</title>
+        <title>Virtual Gallery - Register</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
@@ -43,71 +43,51 @@
                         </div>
                         <div class="navdes"></div>
                     </a>
-                    <a href="./gallery.html" class="d-block text-decoration-none p-xl-0 p-1 hoveractive">
-                        <div class="d-flex text-center py-3 px-4 text-primary justify-content-center align-items-center">
+                    <a href="./gallery.php" class="d-block text-decoration-none p-xl-0 p-1 hover">
+                        <div class="d-flex text-center py-3 px-4 text-light justify-content-center align-items-center">
                             <span class="material-symbols-outlined d-block fs-2 p-1">Photo_library</span>
                             <span class="px-2 fs-3">Virtual gallery</span>
                         </div>
-                        <div class="navdesactive"></div>
+                        <div class="navdes"></div>
                     </a>
-                    <a href="./login.html" class="d-block text-decoration-none ms-xl-auto p-xl-0 p-1 hover">
+                    <a href="./login.php" class="d-block text-decoration-none ms-xl-auto p-xl-0 p-1 hover">
                         <div class="d-flex text-center py-3 px-4 text-light justify-content-center align-items-center">
                             <span class="material-symbols-outlined d-block fs-2 p-1">Login</span>
                             <span class="px-2 fs-3">Log in</span>
                         </div>
                         <div class="navdes"></div>
                     </a>
-                    <a href="./register.html" class="d-block text-decoration-none p-xl-0 p-1 hover">
-                        <div class="d-flex text-center py-3 px-4 text-light justify-content-center align-items-center">
+                    <a href="./register.php" class="d-block text-decoration-none p-xl-0 p-1 hoveractive">
+                        <div class="d-flex text-center py-3 px-4 text-primary justify-content-center align-items-center">
                             <span class="material-symbols-outlined d-block fs-2 p-1">How_to_reg</span>
                             <span class="px-2 fs-3">Sign in</span>
                         </div>
-                        <div class="navdes"></div>
+                        <div class="navdesactive"></div>
                     </a>
                 </div>
             </nav>
         </header>
 
         <main class="text-center">
-            <div class="d-flex justify-content-center">
-                <div class="mt-5 d-block border border-3 shadow-lg border-dark-subtle pt-3 overflow-hidden">
-                    <div class="row d-flex">
-                        <div class="d-block col-md-4 col-12">
-                            <img src="../img/user.jpg" alt="user" class="img-fluid ms-md-4 ms-0">
-                            <p class="ms-md-5 ms-0 text-center fs-3 overflow-auto border-bottom border-3 fw-medium" d="name">Some User</p>
-                        </div>
-                        <div class="d-block col-md-8 col-12">
-                            <h1 class="text-container-7">User Info</h1>
-                            <hr class="line mx-5">
-                            <div class="row justify-content-center text-container-4">
-                                <ul class="list-unstyled fw-bold col-5">
-                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">visibility</span>&nbsp;Viewed arts:</li>
-                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">thumb_up</span>&nbsp;Liked:</li>
-                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">thumb_down</span>&nbsp;Disliked:</li>
-                                    <li class="d-flex pb-2"><span class="material-symbols-outlined">history</span>&nbsp;Logged times:</li>
-                                </ul>
-                                <ul class="list-unstyled fw-bold col-1">
-                                    <li class="pb-2" id="view">0</li>
-                                    <li class="pb-2" id="like">0</li>
-                                    <li class="pb-2" id="dislike">0</li>
-                                    <li class="pb-2" id="log">0</li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="my-5 container justify-content-center d-flex">
+                <form class="text-container-6 mx-5 w-75 mt-5">
+                    <div class="mb-5">
+                        <label for="name" class="form-label fs-1">Username</label>
+                        <input type="text" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" id="name">
                     </div>
-                </div>
-            </div>
-            <div class="container my-5">
-                <div class="border border-4 justify-content-center">
-                    <div class="imgframe border-bottom border-3 mb-3 d-flex align-items-center justify-content-center" id="frame">
-                        <img src="../img/imgph.jpg" class="img" id="img">
+                    <div class="mb-5">
+                        <label for="email" class="form-label fs-1">Email address</label>
+                        <input type="email" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" id="email">
                     </div>
-                    <div class="d-flex justify-content-around">
-                        <button type="submit" class="btn btn-success text-container-4 fs-2 mb-3" id="artbtnlike">Like</button>
-                        <button type="submit" class="btn btn-primary text-container-4 fs-2 mb-3" id="artbtngenerate">Generate Art</button>
-                        <button type="submit" class="btn btn-danger text-container-4 fs-2 mb-3" id="artbtndislike">Dislike</button>
+                    <div class="mb-5">
+                        <label for="pass" class="form-label fs-1">Password</label>
+                        <input type="password" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" id="pass">
                     </div>
-                </div>
+                    <div class="row justify-content-lg-between justify-content-center align-items-center my-5">
+                        <a href="./login.html" class="fs-3 text-decoration-none text-container-4 col-lg-6 col-12">Already have account? Log in here.</a>
+                        <button type="submit" class="btn btn-primary fs-3 col-xl-2 col-lg-3 mt-lg-2 mt-4 col-4">Register</button>
+                    </div>
+                </form>
             </div>
         </main>
 
@@ -143,8 +123,6 @@
                 </div>
             </div>
         </footer>
-
-        <script type="text/javascript" src="../js/arts.js"></script>
     </body>
 </html>
 
