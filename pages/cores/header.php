@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,8 +16,8 @@
                     echo "Virtual Gallery";
                     break;
                 case '/pages/login.php':
-                    if (isset($_SESSION["logged"])) {
-                        if ($_SESSION["logged"] == "false") {
+                    if (isset($_SESSION['logged'])) {
+                        if ($_SESSION['logged'] == 'false') {
                             echo "Virtual Gallery - Login";
                             break;
                         }
@@ -29,8 +25,8 @@
                     echo "Virtual Gallery - Logout";
                     break;
                 case '/pages/logout.php':
-                    if (isset($_SESSION["logged"])) {
-                        if ($_SESSION["logged"] == "true") {
+                    if (isset($_SESSION['logged'])) {
+                        if ($_SESSION['logged'] == 'true') {
                             echo "Virtual Gallery - Logout";
                             break;
                         }
@@ -76,7 +72,7 @@
             <nav class="bg-dark d-xl-flex nav navbar-collapse collapse" id="navbar">
                 <div class="d-xl-flex d-block pb-2 container">
                     <hr class="line">
-                    <a href="/pages/home" class="d-block text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/home.php' ? 'active' : '' ?>">
+                    <a href="/" class="d-block text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/home.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/home.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
                             <span class="material-symbols-outlined d-block fs-2 p-1">Home</span>
                             <span class="px-2 fs-3">Home</span>
@@ -130,8 +126,8 @@
             <div class="position-fixed pt-4 pe-sm-5 pe-2 toastpos d-none d-md-flex">
                 <div class="container toast align-items-center border-0 float-end bg-dark" id="toast">
                     <div class="d-flex">
-                        <div class="toast-body text-white toasttext">
-                            Welcome to our virtual gallery, don't forget to look at <a href="./about">About us</a>.
+                        <div class="toast-body text-white display-6 fs-5">
+                            Welcome to our virtual gallery, don't forget to look at <a href="./pages/about">About us</a>.
                         </div>
                         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>

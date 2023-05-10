@@ -4,21 +4,53 @@ include 'dbc.php';
 
 session_start();
 
-verifyUser($_POST["email"], $_POST["pass"]);
-
 function verifyUser($email, $pass){
     $connection = DBC::getConnection();
-    $statement = $connection->prepare("SELECT email, password FROM user WHERE email = ? and password = ?");
+
+    $statement = $connection->prepare("call login (?, ?, @logsuccess)");
     $statement->bind_param("ss", $email, $pass);
     $statement->execute();
-    $result = $statement->get_result();
-    if($result->num_rows > 0){
+    $statement->store_result();
+
+    $outputStatement = $connection->prepare("select @logsuccess");
+    $outputStatement->execute();
+    $outputStatement->bind_result($logsuccess);
+    $outputStatement->fetch();
+    $outputStatement->free_result();
+
+    if($logsuccess == 1){
         $_SESSION["logged"] = "true";
+        setData($email);
         header("Location: ../logout");
         return;
     }
+    
     $_SESSION["error"] = "Invalid Email or Password";
     header("Location: ../login");
 }
+
+function setData($email)
+{
+    $connection = DBC::getConnection();
+
+    $statement = $connection->prepare("call get_stats (?, @namex, @viewsx, @likesx, @dislikesx, @logsx)");
+    $statement->bind_param("s", $email);
+    $statement->execute();
+    $statement->store_result();
+
+    $outputStatement = $connection->prepare("select @namex, @viewsx, @likesx, @dislikesx, @logsx");
+    $outputStatement->execute();
+    $outputStatement->bind_result($namex, $viewsx, $likesx, $dislikesx, $logsx);
+    $outputStatement->fetch();
+    $outputStatement->free_result();
+
+    $_SESSION["name"] = $namex;
+    $_SESSION["views"] = $viewsx;
+    $_SESSION["likes"] = $likesx;
+    $_SESSION["dislikes"] = $dislikesx;
+    $_SESSION["logs"] = $logsx;
+}
+
+verifyUser($_POST["email"], $_POST["pass"]);
 
 ?>

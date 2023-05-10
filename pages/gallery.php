@@ -4,7 +4,7 @@
             <div class="row d-flex">
                 <div class="d-block col-md-4 col-12">
                     <img src="../img/user.jpg" alt="user" class="img-fluid ms-md-4 ms-0">
-                    <p class="ms-md-5 ms-0 text-center fs-3 overflow-auto border-bottom border-3 fw-medium">Unknown</p>
+                    <p class="ms-md-5 ms-0 text-center fs-3 overflow-auto border-bottom border-3 fw-medium"><?= $_SESSION['logged'] === 'true' ? $_SESSION["name"] : 'Unknown' ?></p>
                 </div>
                 <div class="d-block col-md-8 col-12">
                     <h1 class="text-container-7">User Info</h1>
@@ -17,10 +17,10 @@
                             <li class="d-flex pb-2"><span class="material-symbols-outlined">history</span>&nbsp;Logged times:</li>
                         </ul>
                         <ul class="list-unstyled fw-bold col-1">
-                            <li class="pb-2">-</li>
-                            <li class="pb-2">-</li>
-                            <li class="pb-2">-</li>
-                            <li class="pb-2">-</li>
+                            <li class="pb-2"><?= $_SESSION['logged'] === 'true' ? $_SESSION['views'] : '-' ?></li>
+                            <li class="pb-2"><?= $_SESSION['logged'] === 'true' ? $_SESSION['likes'] : '-' ?></li>
+                            <li class="pb-2"><?= $_SESSION['logged'] === 'true' ? $_SESSION['dislikes'] : '-' ?></li>
+                            <li class="pb-2"><?= $_SESSION['logged'] === 'true' ? $_SESSION['logs'] : '-' ?></li>
                         </ul>
                     </div>
                 </div>
@@ -28,8 +28,8 @@
         </div>
     </div>
     <?php
-        if (isset($_SESSION["logged"])) {
-            if($_SESSION["logged"] == "false") {
+        if (isset($_SESSION['logged'])) {
+            if($_SESSION['logged'] == 'false') {
                 echo '<div class="container mt-3 d-block"><p class="text-center fs-1 text-danger mt-5" id="counter"></p><button type="button" class="btn btn-secondary text-center text-white bg-danger fs-1 p-3 mb-5 mt-3" id="notlogged" title="Login or continue with limited access. With limited access you can only look at 10 pictures per hour. Login or sign up for free to increase this limit to 50 pictures per hour!">Continue with limited access.</button></div>';
             }
         }
