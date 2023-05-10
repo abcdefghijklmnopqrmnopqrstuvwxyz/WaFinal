@@ -72,51 +72,51 @@
             <nav class="bg-dark d-xl-flex nav navbar-collapse collapse" id="navbar">
                 <div class="d-xl-flex d-block pb-2 container">
                     <hr class="line">
-                    <a href="/" class="d-block text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/home.php' ? 'active' : '' ?>">
+                    <a href="/home" class="d-block text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/home.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/home.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
-                            <span class="material-symbols-outlined d-block fs-2 p-1">Home</span>
+                            <span class="material-symbols-outlined d-block fs-1 p-1">Home</span>
                             <span class="px-2 fs-3">Home</span>
                         </div>
                         <div class="navdes<?= $_SESSION['site'] === '/pages/home.php' ? 'active' : '' ?>"></div>
                     </a>
                     <a href="/pages/about" class="d-block text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/about.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/about.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
-                            <span class="material-symbols-outlined d-block fs-2 p-1">Help</span>
+                            <span class="material-symbols-outlined d-block fs-1 p-1">Help</span>
                             <span class="px-2 fs-3">About us</span>
                         </div>
                         <div class="navdes<?= $_SESSION['site'] === '/pages/about.php' ? 'active' : '' ?>"></div>
                     </a>
                     <a href="/pages/gallery" class="d-block text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/gallery.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/gallery.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
-                            <span class="material-symbols-outlined d-block fs-2 p-1">Photo_library</span>
+                            <span class="material-symbols-outlined d-block fs-1 p-1">Photo_library</span>
                             <span class="px-2 fs-3">Virtual gallery</span>
                         </div>
                         <div class="navdes<?= $_SESSION['site'] === '/pages/gallery.php' ? 'active' : '' ?>"></div>
                     </a>
                     <a href="/pages/login" class="d-<?= $_SESSION['logged'] === 'false' ? 'block' : 'none' ?> text-decoration-none ms-xl-auto p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/login.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/login.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
-                            <span class="material-symbols-outlined d-block fs-2 p-1">Login</span>
+                            <span class="material-symbols-outlined d-block fs-1 p-1">Login</span>
                             <span class="px-2 fs-3">Log in</span>
                         </div>
                         <div class="navdes<?= $_SESSION['site'] === '/pages/login.php' ? 'active' : '' ?>"></div>
                     </a>
                     <a href="/pages/logout" class="d-<?= $_SESSION['logged'] === 'true' ? 'block' : 'none' ?> text-decoration-none ms-xl-auto p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/logout.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/logout.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
-                            <span class="material-symbols-outlined d-block fs-2 p-1">Login</span>
+                            <span class="material-symbols-outlined d-block fs-1 p-1">Login</span>
                             <span class="px-2 fs-3">Log out</span>
                         </div>
                         <div class="navdes<?= $_SESSION['site'] === '/pages/logout.php' ? 'active' : '' ?>"></div>
                     </a>
                     <a href="/pages/register" class="d-<?= $_SESSION['logged'] === 'false' ? 'block' : 'none' ?> text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/register.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/register.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
-                            <span class="material-symbols-outlined d-block fs-2 p-1">How_to_reg</span>
+                            <span class="material-symbols-outlined d-block fs-1 p-1">How_to_reg</span>
                             <span class="px-2 fs-3">Sign in</span>
                         </div>
                         <div class="navdes<?= $_SESSION['site'] === '/pages/register.php' ? 'active' : '' ?>"></div>
                     </a>
                     <a href="/pages/logged" class="d-<?= $_SESSION['logged'] === 'true' ? 'block' : 'none' ?> text-decoration-none p-xl-0 p-1 hover<?= $_SESSION['site'] === '/pages/logged.php' ? 'active' : '' ?>">
                         <div class="d-flex text-center py-3 px-4 text-<?= $_SESSION['site'] === '/pages/logged.php' ? 'primary' : 'light' ?> justify-content-center align-items-center">
-                            <span class="material-symbols-outlined d-block fs-2 p-1">How_to_reg</span>
+                            <span class="material-symbols-outlined d-block fs-1 p-1">How_to_reg</span>
                             <span class="px-2 fs-3">Sign in</span>
                         </div>
                         <div class="navdes<?= $_SESSION['site'] === '/pages/logged.php' ? 'active' : '' ?>"></div>

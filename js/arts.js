@@ -16,7 +16,6 @@ function checkLogin()
         if(count - parseInt(localStorage.getItem("count")) > 0)
         {
             getImgData();
-            $(counter).text("Available pictures this hour: " + (count - parseInt(localStorage.getItem("count"))));
         }
         else
         {
@@ -28,18 +27,16 @@ function checkLogin()
     {
         getImgData();
     }
-    console.log(parseInt(localStorage.getItem("count")));
-    console.log(parseInt(localStorage.getItem("time")));
 }
 
 function checkTime()
 {
-    if(parseInt(localStorage.getItem("time")) != new Date().getMinutes())
+    if(parseInt(localStorage.getItem("time")) != new Date().getHours())
     {
-        localStorage.setItem("time", new Date().getMinutes());
         localStorage.setItem("count", 0);
     }
-    localStorage.setItem("time", new Date().getMinutes());
+    localStorage.setItem("time", new Date().getHours());
+    $(counter).text("Available pictures this hour: " + (count - parseInt(localStorage.getItem("count"))));
 }
 
 function getImgData()
@@ -54,6 +51,7 @@ function getImgData()
             var imageUrl = response.urls.regular;
             $(img).attr("src", imageUrl);
             localStorage.setItem("count", parseInt(localStorage.getItem("count")) + 1);
+            $(counter).text("Available pictures this hour: " + (count - parseInt(localStorage.getItem("count"))));
         },
         error: function(){
             $(frame).empty();
@@ -62,12 +60,6 @@ function getImgData()
     });
 }
 
-artlike.addEventListener('click', checkLogin);
-artdislike.addEventListener('click', checkLogin);
-artgen.addEventListener('click', checkLogin);
+[artlike, artdislike, artgen].forEach(x => x.addEventListener('click', checkLogin));
 
-window.onload = function()
-{
-    checkTime();
-    $(counter).text("Available pictures this hour: " + (count - parseInt(localStorage.getItem("count"))));
-}
+window.onload = setInterval(checkTime, 1000);

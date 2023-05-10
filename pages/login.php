@@ -1,6 +1,6 @@
 <main class="text-center">
-    <div class="my-5 container justify-content-center d-flex">
-        <form class="text-container-6 mx-5 w-75 mt-5" action="./dbsystem/loginsys.php" method="POST">
+    <div class="my-5 container justify-content-center d-flex pt-5">
+        <form class="text-container-6 mx-5 w-75 mb-5" action="./dbsystem/loginsys.php" method="POST">
             <?php
                 if (isset($_SESSION['error'])) {
                     $errorMessage = $_SESSION['error'];
@@ -8,7 +8,7 @@
                     echo "<p class='my-5 fs-1 text-danger'>" . $errorMessage . "</p>";
                 }
             ?>
-            <div class="mb-5 mt-3">
+            <div class="mb-5 mt-5">
                 <label for="email" class="form-label fs-1">Email address</label>
                 <input type="email" class="form-control border-0 border-bottom border-secondary border-2 rounded-0 fs-2 text-center fst-italic" name="email" maxlength="50" required>
             </div>

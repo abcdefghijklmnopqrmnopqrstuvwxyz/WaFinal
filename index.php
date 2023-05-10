@@ -8,6 +8,9 @@ switch ($request) {
     case '/':
         $redirect = '/pages/home.php';
         break;
+    case '/home':
+        $redirect = '/pages/home.php';
+        break;
     case '/pages/about':
         $redirect = '/pages/about.php';
         break;

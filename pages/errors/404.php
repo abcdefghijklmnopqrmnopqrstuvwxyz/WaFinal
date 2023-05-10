@@ -15,7 +15,7 @@
                 <hr class="my-5">
                 <div class="my-5 container justify-content-center d-block">
                     <p class="my-5 text-center fs-1 text-danger">Error 404 - Page not found</p>
-                    <a href="/" class="btn btn-danger fs-2 col-lg-4 mt-4 col-sm-6 col-8">Return to Main Menu</a>
+                    <a href="/home" class="btn btn-danger fs-2 col-lg-4 mt-4 col-sm-6 col-8">Return to Main Menu</a>
                 </div>
                 <hr class="my-5">
                 <hr class="my-5">
