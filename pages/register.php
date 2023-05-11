@@ -1,6 +1,6 @@
 <main class="text-center">
     <div class="my-5 container justify-content-center d-flex">
-        <form class="text-container-6 mx-5 w-75 mt-5" action="./dbsystem/registersys.php" method="POST">
+        <form class="text-container-6 mx-5 w-75 mt-5" action="./dbsystem/registersys.php" id="fade" method="POST">
             <?php
                 if (isset($_SESSION['report'])) {
                     $reportMessage = $_SESSION['report'];
@@ -32,3 +32,5 @@
         </form>
     </div>
 </main>
+
+<script type="text/javascript" src="../js/animations.js"></script>

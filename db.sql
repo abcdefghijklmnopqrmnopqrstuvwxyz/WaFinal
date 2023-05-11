@@ -39,13 +39,28 @@ DELIMITER ;
 /*==========GET_STATS==========*/
 DELIMITER //
 
+create procedure `set_stats` (in emailx varchar(200), in viewsx int, in likesx int, in dislikesx int, in logsx int)
+begin
+	update user set 
+		views = viewsx,
+        likes = likesx,
+        dislikes = dislikesx,
+        logs = logsx
+	where email = emailx;
+end //
+
+DELIMITER ;
+
+/*==========SET_STATS==========*/
+DELIMITER //
+
 create procedure `get_stats` (in emailx varchar(200), out namex varchar(20), out viewsx int, out likesx int, out dislikesx int, out logsx int)
 begin
 	set namex = (select name from user where email = emailx);
 	set viewsx = (select views from user where email = emailx);
-    set likesx = (select views from user where email = emailx);
-    set dislikesx = (select views from user where email = emailx);
-    set logsx = (select views from user where email = emailx);
+    set likesx = (select likes from user where email = emailx);
+    set dislikesx = (select dislikes from user where email = emailx);
+    set logsx = (select logs from user where email = emailx);
 end //
 
 DELIMITER ;
@@ -60,31 +75,12 @@ end //
 
 DELIMITER ;
 
-/*============LOGIN============*/
-DELIMITER //
-
-create procedure `login` (in emailx varchar(200), out logsuccess tinyint)
-begin
-	declare exist int default 0;
-    
-    select count(id) into exist from user where emailx = email and passwordx = password;
-    
-    if exist = 1
-    then
-		set logsuccess = 1;
-	else
-		set logsuccess = 0;
-	end if;
-end //
-
-DELIMITER ;
 
 /*=============================*/
 drop table user;
 drop procedure add_user;
 drop procedure get_stats;
+drop procedure set_stats;
 drop procedure login;
-        
-call add_user ('user10', 'user10@gmail.com', 'abc123', @success);
 	
 select * from user;

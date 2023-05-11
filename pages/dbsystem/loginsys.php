@@ -1,58 +1,41 @@
 <?php
 
-include 'dbc.php';
+require_once 'dbc.php';
+include 'statsys.php';
 
 session_start();
 
 function verifyUser($email, $pass){
-    $connection = DBC::getConnection();
-
-    $statement = $connection->prepare("call login (?, ?, @logsuccess)");
-    $statement->bind_param("ss", $email, $pass);
-    $statement->execute();
-    $statement->store_result();
-
-    $outputStatement = $connection->prepare("select @logsuccess");
-    $outputStatement->execute();
-    $outputStatement->bind_result($logsuccess);
-    $outputStatement->fetch();
-    $outputStatement->free_result();
-
-    if($logsuccess == 1){
+    if(password_verify($pass, verifyPass($email))){
         $_SESSION["logged"] = "true";
-        setData($email);
-        header("Location: ../login");
-        return;
+        setData($email, 'log');
     }
-    
-    $_SESSION["error"] = "Invalid Email or Password";
+    else{
+        $_SESSION["error"] = "Invalid Email or Password";
+    }
     header("Location: ../login");
 }
 
-function setData($email){
+function verifyPass($email) : string{
     $connection = DBC::getConnection();
 
-    $statement = $connection->prepare("call get_stats (?, @namex, @viewsx, @likesx, @dislikesx, @logsx)");
-    $statement->bind_param("s", $email);
-    $statement->execute();
-    $statement->store_result();
+    $getHashStatement = $connection->prepare("call get_hash(?, @hashx)");
+    $getHashStatement->bind_param("s", $email);
+    $getHashStatement->execute();
+    $getHashStatement->store_result();
 
-    $outputStatement = $connection->prepare("select @namex, @viewsx, @likesx, @dislikesx, @logsx");
-    $outputStatement->execute();
-    $outputStatement->bind_result($namex, $viewsx, $likesx, $dislikesx, $logsx);
-    $outputStatement->fetch();
-    $outputStatement->free_result();
+    $getHashResultStatement = $connection->prepare("select @hashx");
+    $getHashResultStatement->execute();
+    $getHashResultStatement->bind_result($hash);
+    $getHashResultStatement->fetch();
+    $getHashResultStatement->free_result();
 
-    $_SESSION["name"] = $namex;
-    $_SESSION["views"] = $viewsx;
-    $_SESSION["likes"] = $likesx;
-    $_SESSION["dislikes"] = $dislikesx;
-    $_SESSION["logs"] = $logsx;
-}
-
-function verifyPass($pass) : string{
-    $password = password_verify($pass, $passwordx);
-    return $password;
+    if($hash != null){
+        return $hash;
+    }
+    else{
+        return '';
+    }
 }
 
 verifyUser($_POST["email"], $_POST["pass"]);

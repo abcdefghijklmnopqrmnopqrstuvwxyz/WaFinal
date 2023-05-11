@@ -4,7 +4,7 @@ session_start();
 
 $request = $_SERVER['REQUEST_URI'];
 
-switch ($request) {
+switch ($request){
     case '/':
         $redirect = '/pages/home.php';
         break;
@@ -45,7 +45,6 @@ $_SESSION['site'] = $redirect;
 if (!isset($_SESSION['logged'])) {
     $_SESSION['logged'] = 'false';
 }
-
 
 require_once __DIR__ . '/pages/cores/header.php';
 require_once __DIR__ . $redirect;

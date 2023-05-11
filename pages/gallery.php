@@ -1,4 +1,4 @@
-<main class="text-center" id="main">
+<main class="text-center">
     <div class="d-flex justify-content-center">
         <div class="mt-5 d-block border border-3 shadow-lg border-dark-subtle pt-3 overflow-hidden">
             <div class="row d-flex">

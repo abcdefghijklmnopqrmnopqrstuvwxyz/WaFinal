@@ -55,6 +55,24 @@ header {
     right: 0;
 }
 
+@media only screen and (max-width: 1640px) {
+    .text-container {
+        font-size: 9vw;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .text-container {
+        font-size: 9.5vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .text-container {
+        font-size: 11vw;
+    }
+}
+
 @media only screen and (max-width: 990px) {
     .carousel-title {
         font-size: 30px;
@@ -100,6 +118,12 @@ header {
 
     .carousel-title {
         font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .text-container {
+        font-size: 16vw;
     }
 }
 
@@ -197,4 +221,9 @@ header {
 .line {
     height: 3px;
     background-color: gray;
+}
+
+.middle {
+    margin-top: 25vh;
+    margin-bottom: 25vh;
 }

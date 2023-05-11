@@ -1,5 +1,5 @@
 <main class="text-center backgr-2">
-    <div class="container bg-white">
+    <div class="container bg-white" id="roll">
         <div class="d-block pt-3 mb-5">
             <h1 class="p-5 text-container-2">About Virtual Gallery</h1>
             <p class="fs-4 mx-5 text-container-4">Welcome to our virtual gallery! We are a team of passionate artists and curators who are excited to share our artistic visions and creations with you. Our gallery serves as an open space for artists from around the world to showcase their artworks and connect with audiences.</p>
@@ -648,3 +648,5 @@
         </div>
     </div>
 </main>
+
+<script type="text/javascript" src="../js/animations.js"></script>

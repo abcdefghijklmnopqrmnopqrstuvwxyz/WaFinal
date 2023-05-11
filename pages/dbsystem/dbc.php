@@ -4,7 +4,7 @@ class DBC
 {
     const SERVER_IP = "localhost";
     const USER = "root";
-    const PASSWORD = "student";
+    const PASSWORD = "Srpen2004";
     const DATABASE = "wa";
 
     private static $connection = null;

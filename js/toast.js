@@ -1,3 +1,3 @@
-const toastSelector = document.getElementById('toast');
+const toastSelector = $('#toast');
 const toast = new bootstrap.Toast(toastSelector);
 toast.show();
