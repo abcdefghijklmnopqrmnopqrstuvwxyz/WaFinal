@@ -1,6 +1,6 @@
 # WA Final Project - Virtual Gallery
 
-Website for looking at online arts..
+Website for looking at online arts.
 
 Used technologies:
 ```
