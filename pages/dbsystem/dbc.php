@@ -2,10 +2,10 @@
 
 class DBC
 {
-    const SERVER_IP = "193.85.203.188";
-    const USER = "bohac2";
-    const PASSWORD = "Srpen2004";
-    const DATABASE = "bohac2";
+    const SERVER_IP = "localhost";
+    const USER = "root";
+    const PASSWORD = "student";
+    const DATABASE = "wa";
 
     private static $connection = null;
 
@@ -24,6 +24,7 @@ class DBC
             mysqli_close(self::$connection);
         }
     }
+
 }
 
 ?>

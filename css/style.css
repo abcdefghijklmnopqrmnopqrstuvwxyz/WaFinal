@@ -55,10 +55,6 @@ header {
     right: 0;
 }
 
-.toasttext {
-    font-size: 17px;
-}
-
 @media only screen and (max-width: 990px) {
     .carousel-title {
         font-size: 30px;
@@ -76,10 +72,6 @@ header {
 
     .carousel-title {
         font-size: 28px;
-    }
-
-    .toasttext {
-        font-size: 15px;
     }
 }
 
@@ -132,8 +124,8 @@ header {
     position: fixed;
     left: var(--x);
     top: var(--y);
-    width: var(--size);
-    height: var(--size);
+    width: 200px;
+    height: 200px;
     background: radial-gradient(circle closest-side, rgb(166, 204, 221), transparent);
     transform: translate(-50%, -50%);
     transition: 0 0.2s ease, 0 0.2s ease;

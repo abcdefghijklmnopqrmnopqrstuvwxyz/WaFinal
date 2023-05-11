@@ -3,6 +3,41 @@ const frame = document.getElementById("frame");
 const artlike = document.getElementById("artbtnlike");
 const artdislike = document.getElementById("artbtndislike");
 const artgen = document.getElementById("artbtngenerate");
+const counter = document.getElementById("counter");
+const logged = document.getElementById("notlogged");
+const count = 10;
+
+function checkLogin()
+{
+    if(logged != null)
+    {
+        checkTime();
+
+        if(count - parseInt(localStorage.getItem("count")) > 0)
+        {
+            getImgData();
+        }
+        else
+        {
+            $(frame).empty();
+            $(frame).append('<div class="alert fs-2 alert-danger px-5 py-3 mt-3" role="alert">You have already used all free generations this hour! Wait next hour or login/register for free!</div>');
+        }
+    }
+    else
+    {
+        getImgData();
+    }
+}
+
+function checkTime()
+{
+    if(parseInt(localStorage.getItem("time")) != new Date().getHours())
+    {
+        localStorage.setItem("count", 0);
+    }
+    localStorage.setItem("time", new Date().getHours());
+    $(counter).text("Available pictures this hour: " + (count - parseInt(localStorage.getItem("count"))));
+}
 
 function getImgData()
 {
@@ -14,16 +49,17 @@ function getImgData()
         method: "GET",
         success: function(response){
             var imageUrl = response.urls.regular;
-            localStorage.setItem("img", imageUrl);
             $(img).attr("src", imageUrl);
+            localStorage.setItem("count", parseInt(localStorage.getItem("count")) + 1);
+            $(counter).text("Available pictures this hour: " + (count - parseInt(localStorage.getItem("count"))));
         },
         error: function(){
             $(frame).empty();
-            $(frame).append('<div class="imgframe alert fs-3 alert-danger px-5 py-3 mt-3" role="alert">Service currently unaviable, try again later!</div>');
+            $(frame).append('<div class="alert fs-2 alert-danger px-5 py-3 mt-3" role="alert">Service currently unaviable, try again later!</div>');
         }
     });
 }
 
-artlike.addEventListener('click', getImgData);
-artdislike.addEventListener('click', getImgData);
-artgen.addEventListener('click', getImgData);
+[artlike, artdislike, artgen].forEach(x => $(x).click(checkLogin));
+
+window.onload = setInterval(checkTime, 1000);
