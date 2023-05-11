@@ -35,3 +35,5 @@ Basic registration page with input for name, email and password. Name and email 
 
 #### Run website
 To run the website, you needs an web server - for example Apache(files should be located in /xampp/htdocs in default). Than you needs MySQL(8.0) database. **You can use the db.sql script to create it**. If you have both prepared, you can start the web server and type 'localhost' into search field which will redirect you to Home page.
+
+*Likes, Dislikes and Views in statistics are not implemented. The only implemented statistics is Logs count.*
