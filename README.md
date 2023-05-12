@@ -26,7 +26,7 @@ Long scrollable page with content telling user more about the page.
 Page that allows user to generate random art from gallery using API. Without login, user is restricted to generate in total 10 arts/hour. With login, user is not restricted with generating arts. **The API is restricted to allow generate 50 arts/hour.**
 
 ### 'Login' page
-Basic login page with input for email and password. With wrong credentials, user friendly error will appear.
+Basic login page with input for email and password. With wrong credentials, user friendly error will appear. If user enter three times in row wrong credentials, it will be saved into log.
 
 ### 'Sign up' page
 Basic registration page with input for name, email and password. Name and email must be unique. Datas are saved into database using procedures. With credentials already used for another, user friendly error will appear. Passwords are hashed.

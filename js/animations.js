@@ -9,13 +9,13 @@ bumpElement(bump)
 function fadeInElement(element)
 {
     $(element).hide();
-    $(element).fadeIn(1100);
+    $(element).fadeIn(500);
 }
 
 function rollElement(element)
 {
     $(element).hide();
-    $(element).slideDown(1700)
+    $(element).slideDown(1300)
 }
 
 function bumpElement(element)

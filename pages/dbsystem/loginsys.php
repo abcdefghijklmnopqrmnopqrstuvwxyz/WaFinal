@@ -8,10 +8,17 @@ session_start();
 function verifyUser($email, $pass){
     if(password_verify($pass, verifyPass($email))){
         $_SESSION["logged"] = "true";
-        setData($email, 'log');
+        $_SESSION["wrong"] = 0;
+        setData($email, "log");
     }
     else{
         $_SESSION["error"] = "Invalid Email or Password";
+        $_SESSION["wrong"] += 1;
+    }
+    if($_SESSION["wrong"] === 3)
+    {
+        logWrongPass($email);
+        $_SESSION["wrong"] = 0;
     }
     header("Location: ../login");
 }
@@ -35,6 +42,17 @@ function verifyPass($email) : string{
     }
     else{
         return '';
+    }
+}
+
+function logWrongPass($email){
+    $file = fopen("../../logs/log.txt", "a");
+    if ($file){
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $text = "User with IP: '" . $ip . "' unsuccessfully tried three times to log on account: '" . $email . "'.\n";
+        if (fwrite($file, $text)){
+            fclose($file);
+        }
     }
 }
 
